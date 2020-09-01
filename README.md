@@ -1,4 +1,4 @@
-# Quicksteps
+# Quicksteps iOS
 A simple GPS Fitness app to keep track of your runs. Written in Swift.
 
 # Features
