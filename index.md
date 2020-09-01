@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+## Quicksteps iOS
 
-You can use the [editor on GitHub](https://github.com/otioritsejafor/Quicksteps/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A simple GPS Fitness app for tracking your runs. Written in Swift.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Features
+The two major features of Quicksteps are:
+- Tracking your current runs
+- Reviewing your past runs. When reviewing your previous runs, you are also able to see a trace of the path taken on a map.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/otioritsejafor/Quicksteps/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![Github screenshots](https://user-images.githubusercontent.com/33184801/91781909-31816300-ebc1-11ea-8f93-e59894ba3e9f.jpg)
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with Quicksteps? Check out our [documentation](https://github.com/otioritsejafor/Quicksteps) or email contact@wizlabs.io and we’ll help you sort it out.
