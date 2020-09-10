@@ -202,7 +202,7 @@ class MapViewController: UIViewController {
        
         self.distanceLabel.text = String("\(formattedDistance)".dropLast(3))
         self.timeLabel.text = "\(formattedTime)"
-        self.avgSpeedLabel.text = "\(pace.rounded())"
+        self.avgSpeedLabel.text = "\(pace.rounded()) mi/h"
     }
     
     func presentEndAlert() {
