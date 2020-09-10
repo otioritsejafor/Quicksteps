@@ -86,7 +86,7 @@ class MapViewController: UIViewController {
     }
     
     func setUpButton() {
-        startButton.backgroundColor = #colorLiteral(red: 0, green: 0.6711811423, blue: 0.9963676333, alpha: 1)
+        startButton.backgroundColor = .systemPurple//#colorLiteral(red: 0, green: 0.6711811423, blue: 0.9963676333, alpha: 1)
         startButton.layer.cornerRadius = 25.0
         startButton.tintColor = UIColor.white
         startButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -147,7 +147,7 @@ class MapViewController: UIViewController {
             
         } else {
             presentEndAlert()
-            startButton.backgroundColor = #colorLiteral(red: 0, green: 0.6711811423, blue: 0.9963676333, alpha: 1)
+            startButton.backgroundColor = .systemPurple//#colorLiteral(red: 0, green: 0.6711811423, blue: 0.9963676333, alpha: 1)
             startButton.setTitle("Start Run", for: .normal)
             timer?.invalidate()
             locationManager.stopUpdatingLocation()
