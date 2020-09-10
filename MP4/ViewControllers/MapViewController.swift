@@ -82,7 +82,6 @@ class MapViewController: UIViewController {
         }
         
         DataStack.saveContext()
-        
         run = newRun
     }
     
@@ -185,7 +184,6 @@ class MapViewController: UIViewController {
   
         let newCoordinates = Array(coordinateList[0..<currentIndex])
         
-        
         self.updatePolylineWithCoordinates(coordinates: newCoordinates)
         currentIndex += 1
         
@@ -230,7 +228,7 @@ class MapViewController: UIViewController {
     
     func addPolyline(to style: MGLStyle) {
         // Add an empty MGLShapeSource, we’ll keep a reference to this and add points to this later.
-        let source = MGLShapeSource(identifier: "polyline", shape: nil, options: nil)
+        let source = MGLShapeSource(identifier: "polyline", shape: .none, options: nil)
         style.addSource(source)
         polylineSource = source
         
@@ -239,6 +237,7 @@ class MapViewController: UIViewController {
         layer.lineJoin = NSExpression(forConstantValue: "round")
         layer.lineCap = NSExpression(forConstantValue: "round")
         layer.lineColor = NSExpression(forConstantValue: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1))
+        
         
         // The line width should gradually increase based on the zoom level.
         layer.lineWidth = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
@@ -273,7 +272,6 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         userLocation = manager.location
         
         for newLocation in locations {
@@ -301,7 +299,6 @@ extension MapViewController: CLLocationManagerDelegate {
         if status == .denied || status == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
         }
-        //setUpLocation()
     }
     
 }
@@ -310,10 +307,8 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: MGLMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        //locationManager.requestWhenInUseAuthorization()
         setUpLocation()
         addPolyline(to: mapView.style!)
-        
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {

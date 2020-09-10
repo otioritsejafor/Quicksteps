@@ -46,6 +46,7 @@
 		7BA6CDCC23675C2800AB8A51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6CDCB23675C2800AB8A51 /* Assets.xcassets */; };
 		7BA6CDCF23675C2800AB8A51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA6CDCD23675C2800AB8A51 /* LaunchScreen.storyboard */; };
 		7BA6CDDA23675C2900AB8A51 /* MP4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6CDD923675C2900AB8A51 /* MP4Tests.swift */; };
+		7BD06F1E2507DD8B00EEC0BA /* RunItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD06F1D2507DD8B00EEC0BA /* RunItems.swift */; };
 		7BD08E0224FC3C4A00757F01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD08E0124FC3C4A00757F01 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		7BA6CDD523675C2900AB8A51 /* MP4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MP4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA6CDD923675C2900AB8A51 /* MP4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP4Tests.swift; sourceTree = "<group>"; };
 		7BA6CDDB23675C2900AB8A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BD06F1D2507DD8B00EEC0BA /* RunItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunItems.swift; sourceTree = "<group>"; };
 		7BD08E0124FC3C4A00757F01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8576F4ED8AF964C89BBE3D6A /* Pods-MP4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Tests/Pods-MP4Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9076C3009366CFA654FAACCF /* Pods-MP4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4.release.xcconfig"; path = "Pods/Target Support Files/Pods-MP4/Pods-MP4.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				7B72F7EE23699B2200E76559 /* DataStack.swift */,
 				7B72F7FA236C57C200E76559 /* DataController.swift */,
 				7B72F7FE236C62E700E76559 /* CellData.swift */,
+				7BD06F1D2507DD8B00EEC0BA /* RunItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD06F1E2507DD8B00EEC0BA /* RunItems.swift in Sources */,
 				7B72F7F2236AF93200E76559 /* UnitConverter.swift in Sources */,
 				7BA6CDC723675C2700AB8A51 /* MapViewController.swift in Sources */,
 				7B72F7FF236C62E700E76559 /* CellData.swift in Sources */,
@@ -634,6 +638,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8ZC2VCSWH7;
 				INFOPLIST_FILE = MP4/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -641,6 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wizlabs.quicksteps;
 				PRODUCT_NAME = "Quick Steps";
 				SWIFT_VERSION = 5.0;
@@ -654,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8ZC2VCSWH7;
 				INFOPLIST_FILE = MP4/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -661,6 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wizlabs.quicksteps;
 				PRODUCT_NAME = "Quick Steps";
 				SWIFT_VERSION = 5.0;

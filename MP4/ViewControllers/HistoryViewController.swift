@@ -29,9 +29,7 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataStack.context, sectionNameKeyPath: nil, cacheName: "runs")
         fetchedResultsController.delegate = self
-        
-        
-        
+
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -42,7 +40,7 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
+        let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -52,8 +50,6 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
         } catch {
             fatalError("The fetch could not be performed")
         }
-        
-        print("We have \(runs.count) items")
         configureUI()
         
         setupFetchResultsController()
@@ -84,12 +80,10 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     func deleteEntity(at indexPath: IndexPath) {
         let runToDelete = runs[indexPath.row]
         DataStack.persistentContainer.viewContext.delete(runToDelete)
-        //let entityToDelete = fetchedResultsController.object(at: indexPath)//student?.courses?.allObjects[indexPath.row] as! Course
-       // DataStack.context.delete(entityToDelete)
+        
         runs.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-         //student?.removeFromCourses(entityToDelete)
-        //DataStack.persistentContainer.viewContext.delete(entityToDelete)
+
         DataStack.saveContext()
      }
     
@@ -107,11 +101,8 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
         cell.dateLabel.text = "\(FormatDisplay.date(currentRun.timestamp))"
         cell.timeLabel.text = "\(FormatDisplay.time(Int(currentRun.duration)))"
         let pace = currentRun.distance/Double(currentRun.duration) * 2.237
-        let resultPace = pace.rounded(toPlaces: 2)
         let averagePace = pace.rounded(toPlaces: 2)
-//        if let averagePace = currentRun.a {
-//
-//        }
+
         cell.paceLabel.text = "\(averagePace) mph"
         
         return cell
@@ -120,16 +111,12 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteEntity(at: indexPath)
-            //objects.remove(at: indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
-    
-    //func tableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPath" {
@@ -158,9 +145,6 @@ extension HistoryViewController {
         switch type {
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .fade)
-//        case .delete:
-//            break
-            //tableView.deleteRows(at: [newIndexPath!], with: .fade)
         default:
             break
         }

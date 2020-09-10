@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         //dataController.load()
         let tabBarController =  window?.rootViewController as! UITabBarController
+        //tabBa
         let nav = UINavigationController(rootViewController: HistoryViewController())
         let historyVC = tabBarController.viewControllers?.last //as! HistoryViewController
         
