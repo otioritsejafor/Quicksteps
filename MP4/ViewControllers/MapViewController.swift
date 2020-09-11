@@ -19,7 +19,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var avgSpeedLabel: UILabel!
+    @IBOutlet weak var currentSpeedLabel: UILabel!
+    @IBOutlet weak var averageSpeedLabel: UILabel!
+    @IBOutlet weak var caloriesBurnedLabel: UILabel!
     
     // MARK: Location and Time
     var run: Run?
@@ -28,6 +30,7 @@ class MapViewController: UIViewController {
     private var lineTimer: Timer?
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
     private var paces: [Double] = []
+    private var calories: [Double] = []
     private var locationList: [CLLocation] = []
     private var coordinateList: [CLLocationCoordinate2D] = []
     var polylineSource: MGLShapeSource?
@@ -198,11 +201,60 @@ class MapViewController: UIViewController {
         
         let pace = (distance.value/Double(seconds)) * 2.237
         paces.append(pace)
-       
-       
+        let avgSpeed = paces.sum() / Double(paces.count)
+        let caloriesBurned = calculateBurned(avgSpeed: pace, bodyWeight: 170)
+        calories.append(caloriesBurned)
+        
         self.distanceLabel.text = String("\(formattedDistance)".dropLast(3))
         self.timeLabel.text = "\(formattedTime)"
-        self.avgSpeedLabel.text = "\(pace.rounded()) mi/h"
+        self.currentSpeedLabel.text = "\(pace.rounded()) mi/h"
+        self.caloriesBurnedLabel.text = "\(calories.sum().rounded()) kcal"
+        //self.averageSpeedLabel.text = "\(avgSpeed.rounded()) mi/h"
+    }
+    
+    func calculateBurned(avgSpeed: Double, bodyWeight: Double) -> Double {
+        var MET: Double
+        switch avgSpeed {
+        case _ where avgSpeed <= 4.0:
+            MET = 5
+        case _ where avgSpeed <= 5.0:
+            MET = 8.3
+        case _ where avgSpeed <= 5.2:
+            MET = 9
+        case _ where avgSpeed <= 6.0:
+            MET = 9.8
+        case _ where avgSpeed <= 6.7:
+            MET = 10.5
+        case _ where avgSpeed <= 7.0:
+            MET = 11
+        case _ where avgSpeed <= 7.5:
+            MET = 11.5
+        case _ where avgSpeed <= 8.0:
+            MET = 11.8
+        case _ where avgSpeed <= 8.6:
+            MET = 12.3
+        case _ where avgSpeed <= 9.0:
+            MET = 12.8
+        case _ where avgSpeed <= 9.5:
+            MET = 13.7
+        case _ where avgSpeed <= 10.0:
+            MET = 14.5
+        case _ where avgSpeed <= 11.0:
+            MET = 16
+        case _ where avgSpeed <= 12.0:
+            MET = 19
+        case _ where avgSpeed <= 13.0:
+            MET = 19.8
+        case _ where avgSpeed <= 14.0:
+            MET = 23
+        default:
+            MET = 24
+        }
+        
+        print("MET is \(MET)")
+        let final = (MET * (bodyWeight / 2.25) * 3.5) / 200.0
+        
+        return final/60.0
     }
     
     func presentEndAlert() {
@@ -308,7 +360,7 @@ extension MapViewController: CLLocationManagerDelegate {
 extension MapViewController: MGLMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         setUpLocation()
-        addPolyline(to: mapView.style!)
+        //addPolyline(to: mapView.style!)
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
