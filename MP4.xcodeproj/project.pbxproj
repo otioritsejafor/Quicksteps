@@ -106,6 +106,7 @@
 		7BA6CDD523675C2900AB8A51 /* MP4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MP4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA6CDD923675C2900AB8A51 /* MP4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP4Tests.swift; sourceTree = "<group>"; };
 		7BA6CDDB23675C2900AB8A51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB2AC0E250C1EFD000517E4 /* RunTown v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RunTown v2.xcdatamodel"; sourceTree = "<group>"; };
 		7BD06F1D2507DD8B00EEC0BA /* RunItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunItems.swift; sourceTree = "<group>"; };
 		7BD08E0124FC3C4A00757F01 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8576F4ED8AF964C89BBE3D6A /* Pods-MP4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Tests/Pods-MP4Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -760,6 +761,7 @@
 		7B72F7EB2369998000E76559 /* RunTown.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				7BB2AC0E250C1EFD000517E4 /* RunTown v2.xcdatamodel */,
 				7B72F7EC2369998000E76559 /* RunTown.xcdatamodel */,
 			);
 			currentVersion = 7B72F7EC2369998000E76559 /* RunTown.xcdatamodel */;
