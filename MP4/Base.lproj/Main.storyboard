@@ -82,7 +82,7 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-sX-rMP">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-sX-rMP">
                                                                             <rect key="frame" x="0.0" y="38" width="114.66666666666667" height="15"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="15" id="buF-lT-riy"/>
@@ -180,20 +180,20 @@
             </objects>
             <point key="canvasLocation" x="767" y="398"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="OAp-X4-sQv">
             <objects>
                 <tableViewController id="W7y-5V-yYq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ggj-bi-T2Z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ggj-bi-T2Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rz0-9s-ib8">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rz0-9s-ib8" id="bbg-wh-wMr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -203,16 +203,17 @@
                             <outlet property="delegate" destination="W7y-5V-yYq" id="YDW-7I-fTN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="mJW-ne-RNA"/>
+                    <navigationItem key="navigationItem" title="Settings" id="mJW-ne-RNA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G45-87-39W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="767" y="1089"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="yq7-a2-Kg8">
             <objects>
                 <navigationController id="hc4-0P-wHA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="CbP-nC-4zX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="90d-qG-dGJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,6 +306,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Xc7-JA-UWk"/>
                         <segue destination="qiL-Jl-Qi7" kind="relationship" relationship="viewControllers" id="TkX-oO-R3O"/>
+                        <segue destination="hc4-0P-wHA" kind="relationship" relationship="viewControllers" id="0hg-nd-EcG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAK-UR-stN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -618,6 +620,7 @@
     </scenes>
     <resources>
         <image name="bolt.fill" catalog="system" width="101" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="hare.fill" catalog="system" width="128" height="91"/>
         <image name="left-arrow" width="64" height="64"/>
         <image name="medical-history" width="25" height="25"/>

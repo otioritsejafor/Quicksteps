@@ -133,11 +133,11 @@ class MapViewController: UIViewController {
            
             mapView.userTrackingMode = .followWithHeading
             
-            
             //mapView.removeAnnotation(current_loc)
             currentIndex = 1
             seconds = 0
             distance = Measurement(value: 0, unit: UnitLength.meters)
+            calories.removeAll()
             locationList.removeAll()
             coordinateList.removeAll()
             updateDisplay()

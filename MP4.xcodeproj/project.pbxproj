@@ -10,6 +10,7 @@
 		4020C1211114CCF9F7982E02 /* Pods_MP4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2076F50236CC9945960A4049 /* Pods_MP4.framework */; };
 		7510C98D0D2886A41F5347C0 /* Pods_MP4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9438116E3A6AD8D6D8B5B2FD /* Pods_MP4Tests.framework */; };
 		7B4CE59F2510466F00A43DBA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE59E2510466F00A43DBA /* InfoCell.swift */; };
+		7B4CE5A32510721300A43DBA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE5A22510721300A43DBA /* SettingsController.swift */; };
 		7B72F7BE23697E2F00E76559 /* buttonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B72F7BD23697E2F00E76559 /* buttonWithShadow.swift */; };
 		7B72F7C12369840500E76559 /* SF Pro Rounded in Resources */ = {isa = PBXBuildFile; fileRef = 7B72F7C02369840500E76559 /* SF Pro Rounded */; };
 		7B72F7D7236985C000E76559 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7B72F7C5236985BD00E76559 /* SF-Pro-Text-Light.otf */; };
@@ -66,6 +67,7 @@
 		2076F50236CC9945960A4049 /* Pods_MP4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MP4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E7BD083D3A29AFEF3B6FEC /* Pods-MP4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Tests/Pods-MP4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B4CE59E2510466F00A43DBA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		7B4CE5A22510721300A43DBA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		7B72F7BD23697E2F00E76559 /* buttonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonWithShadow.swift; sourceTree = "<group>"; };
 		7B72F7C02369840500E76559 /* SF Pro Rounded */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Pro Rounded"; sourceTree = "<group>"; };
 		7B72F7C5236985BD00E76559 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				7BA6CDC623675C2700AB8A51 /* MapViewController.swift */,
 				7B72F7F1236AF93200E76559 /* UnitConverter.swift */,
 				7B72F800236C88B600E76559 /* PathViewController.swift */,
+				7B4CE5A22510721300A43DBA /* SettingsController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				7B72F7BE23697E2F00E76559 /* buttonWithShadow.swift in Sources */,
 				7BD08E0224FC3C4A00757F01 /* Extensions.swift in Sources */,
 				7B72F7F4236AF97500E76559 /* FormatDisplay.swift in Sources */,
+				7B4CE5A32510721300A43DBA /* SettingsController.swift in Sources */,
 				7B72F7ED2369998000E76559 /* RunTown.xcdatamodeld in Sources */,
 				7B72F7EA2369881F00E76559 /* HistoryViewController.swift in Sources */,
 				7B72F7F8236BDE5300E76559 /* CustomUserAnnotationView.swift in Sources */,
