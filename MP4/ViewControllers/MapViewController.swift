@@ -74,6 +74,7 @@ class MapViewController: UIViewController {
         newRun.duration = Int16(seconds)
         newRun.timestamp = Date()
         newRun.averageSpeed = averagePace
+        newRun.calories = calories.sum()
         //newRun. 
         
         for location in locationList {
@@ -208,7 +209,8 @@ class MapViewController: UIViewController {
         self.distanceLabel.text = String("\(formattedDistance)".dropLast(3))
         self.timeLabel.text = "\(formattedTime)"
         self.currentSpeedLabel.text = "\(pace.rounded()) mi/h"
-        self.caloriesBurnedLabel.text = "\(calories.sum().rounded()) kcal"
+        let intCalories = Int(calories.sum().rounded())
+        self.caloriesBurnedLabel.text = "\(intCalories) kcal"
         //self.averageSpeedLabel.text = "\(avgSpeed.rounded()) mi/h"
     }
     
@@ -251,7 +253,7 @@ class MapViewController: UIViewController {
             MET = 24
         }
         
-        print("MET is \(MET)")
+        //print("MET is \(MET)")
         let final = (MET * (bodyWeight / 2.25) * 3.5) / 200.0
         
         return final/60.0

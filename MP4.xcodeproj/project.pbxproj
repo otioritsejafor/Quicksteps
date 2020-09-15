@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4020C1211114CCF9F7982E02 /* Pods_MP4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2076F50236CC9945960A4049 /* Pods_MP4.framework */; };
 		7510C98D0D2886A41F5347C0 /* Pods_MP4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9438116E3A6AD8D6D8B5B2FD /* Pods_MP4Tests.framework */; };
+		7B4CE59F2510466F00A43DBA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE59E2510466F00A43DBA /* InfoCell.swift */; };
 		7B72F7BE23697E2F00E76559 /* buttonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B72F7BD23697E2F00E76559 /* buttonWithShadow.swift */; };
 		7B72F7C12369840500E76559 /* SF Pro Rounded in Resources */ = {isa = PBXBuildFile; fileRef = 7B72F7C02369840500E76559 /* SF Pro Rounded */; };
 		7B72F7D7236985C000E76559 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7B72F7C5236985BD00E76559 /* SF-Pro-Text-Light.otf */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		2076F50236CC9945960A4049 /* Pods_MP4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MP4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E7BD083D3A29AFEF3B6FEC /* Pods-MP4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Tests/Pods-MP4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B4CE59E2510466F00A43DBA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		7B72F7BD23697E2F00E76559 /* buttonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonWithShadow.swift; sourceTree = "<group>"; };
 		7B72F7C02369840500E76559 /* SF Pro Rounded */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "SF Pro Rounded"; sourceTree = "<group>"; };
 		7B72F7C5236985BD00E76559 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				7B72F7F7236BDE5300E76559 /* CustomUserAnnotationView.swift */,
 				7B72F7FC236C5CBF00E76559 /* HistoryCell.swift */,
 				7BA1D21C250A8D90006DA167 /* MapCircularProgressView.swift */,
+				7B4CE59E2510466F00A43DBA /* InfoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				7BA6CDC723675C2700AB8A51 /* MapViewController.swift in Sources */,
 				7B72F7FF236C62E700E76559 /* CellData.swift in Sources */,
 				7B72F801236C88B600E76559 /* PathViewController.swift in Sources */,
+				7B4CE59F2510466F00A43DBA /* InfoCell.swift in Sources */,
 				7BA6CDC523675C2700AB8A51 /* AppDelegate.swift in Sources */,
 				7B72F7F6236B931700E76559 /* UIView+Extensions.swift in Sources */,
 				7B72F7EF23699B2200E76559 /* DataStack.swift in Sources */,
@@ -764,7 +768,7 @@
 				7BB2AC0E250C1EFD000517E4 /* RunTown v2.xcdatamodel */,
 				7B72F7EC2369998000E76559 /* RunTown.xcdatamodel */,
 			);
-			currentVersion = 7B72F7EC2369998000E76559 /* RunTown.xcdatamodel */;
+			currentVersion = 7BB2AC0E250C1EFD000517E4 /* RunTown v2.xcdatamodel */;
 			path = RunTown.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

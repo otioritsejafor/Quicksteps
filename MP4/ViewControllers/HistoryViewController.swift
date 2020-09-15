@@ -40,6 +40,9 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tableView.register(UINib(nibName: "InfoCell", bundle: Bundle.main), forCellReuseIdentifier: "InfoCell")
+        tableView.dataSource = self
+        tableView.delegate = self
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
@@ -93,17 +96,20 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HistoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
+        
         let currentRun = runs[indexPath.row]
-        let rDistance = currentRun.distance.rounded(toPlaces: 2)
-        let distanceLabel = FormatDisplay.distance(rDistance)
-        cell.distanceLabel.text = distanceLabel//"\(rDistance) miles"
-        cell.dateLabel.text = "\(FormatDisplay.date(currentRun.timestamp))"
-        cell.timeLabel.text = "\(FormatDisplay.time(Int(currentRun.duration)))"
-        let pace = currentRun.distance/Double(currentRun.duration) * 2.237
-        let averagePace = pace.rounded(toPlaces: 2)
-
-        cell.paceLabel.text = "\(averagePace) mph"
+        //cell.labelDate.text = "\(FormatDisplay.date(currentRun.timestamp))"
+        cell.configureData(currentRun: currentRun)
+        //let rDistance = currentRun.distance.rounded(toPlaces: 2)
+        //let distanceLabel = FormatDisplay.distance(rDistance)
+        //cell.distanceLabel.text = distanceLabel//"\(rDistance) miles"
+//        cell.dateLabel.text = "\(FormatDisplay.date(currentRun.timestamp))"
+//        cell.timeLabel.text = "\(FormatDisplay.time(Int(currentRun.duration)))"
+//        let pace = currentRun.distance/Double(currentRun.duration) * 2.237
+//        let averagePace = pace.rounded(toPlaces: 2)
+//
+//        cell.paceLabel.text = "\(averagePace) mph"
         
         return cell
     }
