@@ -1,20 +1,30 @@
 PODS:
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
+  - IQKeyboardManagerSwift (6.5.6)
   - Mapbox-iOS-SDK (5.9.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
 
 DEPENDENCIES:
+  - Charts
+  - IQKeyboardManagerSwift
   - Mapbox-iOS-SDK (~> 5.4)
 
 SPEC REPOS:
   trunk:
+    - Charts
+    - IQKeyboardManagerSwift
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
 
 SPEC CHECKSUMS:
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
 
-PODFILE CHECKSUM: ed256e6d95393b8c168a1b90481887f9d040dc22
+PODFILE CHECKSUM: cbb21755cffc672fe9cb2ee041aba254ae390570
 
 COCOAPODS: 1.10.0.beta.2

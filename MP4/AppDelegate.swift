@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //dataController.load()
         let tabBarController =  window?.rootViewController as! UITabBarController
         //tabBa
-        let nav = UINavigationController(rootViewController: HistoryViewController())
-        let historyVC = tabBarController.viewControllers?.last //as! HistoryViewController
+//        let nav = UINavigationController(rootViewController: HistoryViewController())
+//        let historyVC = tabBarController.viewControllers?.last //as! HistoryViewController
+        IQKeyboardManager.shared.enable = true
+        
         
         //historyVC.dataController = dataController
         return true
