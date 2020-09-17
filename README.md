@@ -7,4 +7,6 @@ The two major features are:
 * Reviewing your past runs.
 When reviewing your previous runs, you are also able to see a trace of the path taken on a map.
 
-![Github screenshots](https://user-images.githubusercontent.com/33184801/91781909-31816300-ebc1-11ea-8f93-e59894ba3e9f.jpg)
+<img width="400" src="https://user-images.githubusercontent.com/33184801/93404015-b66dad00-f84e-11ea-9d90-e995a5594b02.png">
+
+
