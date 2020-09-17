@@ -10,9 +10,10 @@ The two major features are:
 * Reviewing your past runs.
 When reviewing your previous runs, you are also able to see a trace of the path taken on a map.
 
+<p float="left">
 <img width="400" src="https://user-images.githubusercontent.com/33184801/93404720-87f0d180-f850-11ea-8ef5-4b9ae7d78a34.png">
 <img width="400" src="https://user-images.githubusercontent.com/33184801/93404376-aaceb600-f84f-11ea-9706-d5edee2fdf8d.png">
-
+</p>
 
 ## Installation
 
