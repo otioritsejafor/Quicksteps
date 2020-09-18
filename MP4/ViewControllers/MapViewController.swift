@@ -48,6 +48,10 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButton()
+        let onBoarded = UserDefaults.standard.bool(forKey: "Onboarded")
+        if !(onBoarded) {
+            presentCustomAlertOnMainThread(title: "Get Started!", message: "Please input your weight (lbs) to estimate your calories burned each run", buttonTitle: "Done")
+        }
         //configureUI()
         
         enableLocationServices()
@@ -140,6 +144,7 @@ class MapViewController: UIViewController {
             calories.removeAll()
             locationList.removeAll()
             coordinateList.removeAll()
+            
             updateDisplay()
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
                 self.eachSecond()
@@ -196,14 +201,15 @@ class MapViewController: UIViewController {
     private func updateDisplay() {
         let formattedDistance = FormatDisplay.distance(distance)
         let formattedTime = FormatDisplay.time(seconds)
+        let userWeight = UserDefaults.standard.integer(forKey: "Weight")
         //let formattedPace = FormatDisplay.pace(distance: distance,
                                          //      seconds: seconds,
                                          //      outputUnit: .kilometersPerHour)
         
         let pace = (distance.value/Double(seconds)) * 2.237
         paces.append(pace)
-        let avgSpeed = paces.sum() / Double(paces.count)
-        let caloriesBurned = calculateBurned(avgSpeed: pace, bodyWeight: 170)
+        //let avgSpeed = paces.sum() / Double(paces.count)
+        let caloriesBurned = calculateBurned(avgSpeed: pace, bodyWeight: Double(userWeight))
         calories.append(caloriesBurned)
         
         self.distanceLabel.text = String("\(formattedDistance)".dropLast(3))

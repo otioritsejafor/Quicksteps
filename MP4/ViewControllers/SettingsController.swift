@@ -12,6 +12,7 @@ import UIKit
 class SettingsController: UITableViewController {
     
     @IBOutlet weak var weightTextField: UITextField!
+    let defaults = UserDefaults.standard
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -23,17 +24,23 @@ class SettingsController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        let weight = defaults.integer(forKey: "Weight")
+        weightTextField.text = "\(weight)"
     }
     
     
     // MARK: Helpers
     func configureFields() {
         weightTextField.delegate = self
+        weightTextField.font = UIFont.boldSystemFont(ofSize: 17)
     }
 }
 
 extension SettingsController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        var number = Int(textField.text!)
+        defaults.set(number, forKey: "Weight")
+        //defaults.set(Int(textField.text), forKey: "")
         print("Finished editing")
     }
 }

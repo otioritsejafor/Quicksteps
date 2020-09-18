@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4020C1211114CCF9F7982E02 /* Pods_MP4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2076F50236CC9945960A4049 /* Pods_MP4.framework */; };
 		7510C98D0D2886A41F5347C0 /* Pods_MP4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9438116E3A6AD8D6D8B5B2FD /* Pods_MP4Tests.framework */; };
+		7B4A09032514AF9E00AB14FC /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A09022514AF9E00AB14FC /* AlertViewController.swift */; };
 		7B4CE59F2510466F00A43DBA /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE59E2510466F00A43DBA /* InfoCell.swift */; };
 		7B4CE5A32510721300A43DBA /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE5A22510721300A43DBA /* SettingsController.swift */; };
 		7B4CE5A525113FE400A43DBA /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4CE5A425113FE400A43DBA /* SettingsTableViewCell.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		2076F50236CC9945960A4049 /* Pods_MP4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MP4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E7BD083D3A29AFEF3B6FEC /* Pods-MP4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MP4Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MP4Tests/Pods-MP4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B4A09022514AF9E00AB14FC /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		7B4CE59E2510466F00A43DBA /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		7B4CE5A22510721300A43DBA /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		7B4CE5A425113FE400A43DBA /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,11 +143,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B4A09012514AF4300AB14FC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7B72F7F3236AF97500E76559 /* FormatDisplay.swift */,
+				7B72F7F1236AF93200E76559 /* UnitConverter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7B72F7BC23697E1C00E76559 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				7B72F7BD23697E2F00E76559 /* buttonWithShadow.swift */,
-				7B72F7F3236AF97500E76559 /* FormatDisplay.swift */,
 				7B72F7F5236B931700E76559 /* UIView+Extensions.swift */,
 				7B72F7F7236BDE5300E76559 /* CustomUserAnnotationView.swift */,
 				7B72F7FC236C5CBF00E76559 /* HistoryCell.swift */,
@@ -195,9 +205,9 @@
 			children = (
 				7B72F7E92369881F00E76559 /* HistoryViewController.swift */,
 				7BA6CDC623675C2700AB8A51 /* MapViewController.swift */,
-				7B72F7F1236AF93200E76559 /* UnitConverter.swift */,
 				7B72F800236C88B600E76559 /* PathViewController.swift */,
 				7B4CE5A22510721300A43DBA /* SettingsController.swift */,
+				7B4A09022514AF9E00AB14FC /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,6 +246,7 @@
 		7BA6CDC323675C2700AB8A51 /* MP4 */ = {
 			isa = PBXGroup;
 			children = (
+				7B4A09012514AF4300AB14FC /* Utilities */,
 				7B72F7F9236C57B200E76559 /* Model */,
 				7B72F7F0236AF90A00E76559 /* ViewControllers */,
 				7B72F7BF236983EC00E76559 /* Fonts */,
@@ -478,6 +489,7 @@
 				7B72F7FF236C62E700E76559 /* CellData.swift in Sources */,
 				7B72F801236C88B600E76559 /* PathViewController.swift in Sources */,
 				7B4CE59F2510466F00A43DBA /* InfoCell.swift in Sources */,
+				7B4A09032514AF9E00AB14FC /* AlertViewController.swift in Sources */,
 				7BA6CDC523675C2700AB8A51 /* AppDelegate.swift in Sources */,
 				7B72F7F6236B931700E76559 /* UIView+Extensions.swift in Sources */,
 				7B72F7EF23699B2200E76559 /* DataStack.swift in Sources */,

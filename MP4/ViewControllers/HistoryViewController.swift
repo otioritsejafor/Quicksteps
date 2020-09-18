@@ -40,7 +40,7 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.register(UINib(nibName: "InfoCell", bundle: Bundle.main), forCellReuseIdentifier: "InfoCell")
+        //let onboarded = defaults.b
         tableView.dataSource = self
         tableView.delegate = self
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
