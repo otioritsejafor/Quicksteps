@@ -12,7 +12,7 @@ import CoreData
 
 class HistoryViewController: UIViewController, UITableViewDataSource,
 UITableViewDelegate, NSFetchedResultsControllerDelegate {
-    var runs: [Run]!
+    var runs: [Run]?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,9 +40,16 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let onboarded = defaults.b
+        
         tableView.dataSource = self
         tableView.delegate = self
+        configureUI()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
         
         let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
@@ -53,20 +60,13 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
         } catch {
             fatalError("The fetch could not be performed")
         }
-        configureUI()
-        
         setupFetchResultsController()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: indexPath, animated: false)
             tableView.reloadRows(at: [indexPath], with: .fade)
         }
         
-        setupFetchResultsController()
         tableView.reloadData()
     }
 
@@ -81,10 +81,10 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     }
     
     func deleteEntity(at indexPath: IndexPath) {
-        let runToDelete = runs[indexPath.row]
+        let runToDelete = runs![indexPath.row]
         DataStack.persistentContainer.viewContext.delete(runToDelete)
         
-        runs.remove(at: indexPath.row)
+        runs!.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
 
         DataStack.saveContext()
@@ -92,24 +92,18 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return runs.count
+        if let runs = runs { return runs.count }
+        else {
+            return 0
+        }
+       // return runs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
         
-        let currentRun = runs[indexPath.row]
-        //cell.labelDate.text = "\(FormatDisplay.date(currentRun.timestamp))"
+        let currentRun = runs![indexPath.row]
         cell.configureData(currentRun: currentRun)
-        //let rDistance = currentRun.distance.rounded(toPlaces: 2)
-        //let distanceLabel = FormatDisplay.distance(rDistance)
-        //cell.distanceLabel.text = distanceLabel//"\(rDistance) miles"
-//        cell.dateLabel.text = "\(FormatDisplay.date(currentRun.timestamp))"
-//        cell.timeLabel.text = "\(FormatDisplay.time(Int(currentRun.duration)))"
-//        let pace = currentRun.distance/Double(currentRun.duration) * 2.237
-//        let averagePace = pace.rounded(toPlaces: 2)
-//
-//        cell.paceLabel.text = "\(averagePace) mph"
         
         return cell
     }
@@ -127,7 +121,7 @@ UITableViewDelegate, NSFetchedResultsControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPath" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let selectedRun = runs[indexPath.row]
+                let selectedRun = runs![indexPath.row]
                 let locsToSend = Array(selectedRun.locations!)
                 
                 let controller = segue.destination as! PathViewController

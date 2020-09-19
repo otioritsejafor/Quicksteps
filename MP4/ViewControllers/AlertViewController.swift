@@ -36,7 +36,7 @@ class AlertViewController: UIViewController {
         btn.titleLabel?.textColor = .white
         btn.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .systemPink
+        btn.backgroundColor = .systemBlue
         
         return btn
     }()

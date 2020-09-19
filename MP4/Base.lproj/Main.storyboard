@@ -152,6 +152,7 @@
                                             <outlet property="labelDistance" destination="2xd-g8-Rqo" id="wmm-jU-rO4"/>
                                             <outlet property="labelDuration" destination="ID0-Zh-rDx" id="j0e-CX-VHm"/>
                                             <outlet property="viewBackground" destination="PJ6-sN-U3F" id="XY6-zX-ids"/>
+                                            <segue destination="Cqs-zC-RqM" kind="presentation" identifier="showPath" id="eCW-V4-Dnl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -174,7 +175,6 @@
                     <navigationItem key="navigationItem" id="dXz-W3-qUV"/>
                     <connections>
                         <outlet property="tableView" destination="NNW-KV-7im" id="aaG-dh-Nju"/>
-                        <segue destination="Cqs-zC-RqM" kind="presentation" identifier="showPath" id="ULk-xa-RO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzR-Sb-fgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -206,13 +206,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVY-fP-XXu">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVY-fP-XXu">
                                                     <rect key="frame" x="267" y="5" width="97" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="BS5-w3-X6A"/>
+                                                        <constraint firstAttribute="height" constant="34" id="MKJ-sL-K1G"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bVY-fP-XXu" secondAttribute="trailing" constant="10" id="dhV-JA-nHS"/>
+                                                <constraint firstAttribute="trailing" secondItem="bVY-fP-XXu" secondAttribute="trailing" constant="10" id="jJQ-SH-jAm"/>
+                                                <constraint firstItem="bVY-fP-XXu" firstAttribute="centerY" secondItem="bbg-wh-wMr" secondAttribute="centerY" id="v6H-jP-dFf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
